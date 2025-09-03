@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2 BURGERS - Pedidos Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>W2 BURGERS</h1>
+                <div class="burger-icon">🍔</div>
+            </div>
+            <nav class="nav">
+                <a href="#cardapio">Cardápio</a>
+                <a href="#combos">Combos</a>
+                <button class="cart-btn" onclick="toggleCart()">
+                    Carrinho (<span id="cart-count">0</span>)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Hambúrgueres Temáticos</h2>
+                <p>Sabores únicos inspirados nos seus personagens favoritos!</p>
+            </div>
+        </section>
+
+        <!-- Cardápio -->
+        <section id="cardapio" class="menu-section">
+            <div class="container">
+                <h2>CARDÁPIO</h2>
+                <div class="burgers-grid">
+                    <!-- Hambúrgueres serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Combos -->
+        <section id="combos" class="combos-section">
+            <div class="container">
+                <h2>COMBOS ESPECIAIS</h2>
+                <div class="combos-grid">
+                    <!-- Combos serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrinho de Compras -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Itens do carrinho serão inseridos aqui -->
+        </div>
+        <div class="cart-footer">
+            <div class="payment-section">
+                <label>Forma de Pagamento:</label>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="credito" checked>
+                        <span>💳 Crédito</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="debito">
+                        <span>💳 Débito</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="pix">
+                        <span>📱 PIX</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="dinheiro">
+                        <span>💵 Dinheiro</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="shipping-section">
+                <label class="shipping-checkbox">
+                    <input type="checkbox" id="add-shipping" onchange="toggleShipping()">
+                    <span>Adicionar frete</span>
+                </label>
+                
+                <div id="shipping-options" class="shipping-options" style="display: none;">
+                    <label for="shipping-location">Escolha o local:</label>
+                    <select id="shipping-location" onchange="updateShippingPrice()">
+                        <option value="">Selecione o bairro</option>
+                        <option value="5.00">Pau da Lima - R$ 5,00</option>
+                        <option value="8.30">Dom Avelar - R$ 8,30</option>
+                        <option value="6.00">São Rafael - R$ 6,00</option>
+                        <option value="12.70">Cajazeiras - R$ 12,70</option>
+                        <option value="13.70">Castelo Branco - R$ 13,70</option>
+                        <option value="12.70">Nova Brasília - R$ 12,70</option>
+                        <option value="8.00">Gal Costa - R$ 8,00</option>
+                        <option value="10.00">7 de Abril - R$ 10,00</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="subtotal-line">
+                    <span>Subtotal: R$ <span id="cart-subtotal">0.00</span></span>
+                </div>
+                <div class="shipping-line" id="shipping-line" style="display: none;">
+                    <span>Frete: R$ <span id="shipping-price">0.00</span></span>
+                </div>
+                <div class="cart-total">
+                    <strong>Total: R$ <span id="cart-total">0.00</span></strong>
+                </div>
+            </div>
+            
+            <button class="checkout-btn" onclick="checkout()">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 W2 BURGERS - Todos os direitos reservados</p>
+            <p>WhatsApp: (71) 9203-9193</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
