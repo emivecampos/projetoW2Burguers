@@ -140,15 +140,6 @@ Estrutura de Arquivos
 Plain Text
 
 
-w2-burgers/
-├── index.html          # Página principal
-├── css/
-│   └── style.css       # Estilos CSS
-├── js/
-│   └── script.js       # Funcionalidades JavaScript
-├── assets/
-│   └── images/         # Imagens (vazia - para futuras adições)
-└── README.md           # Esta documentação
 
 
 Como Usar
